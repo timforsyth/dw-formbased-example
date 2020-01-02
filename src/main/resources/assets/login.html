@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" type="text/css" href="css/app.css"/>
+    </head>
+    <body class="login-page">
+        <div id="login">
+            <h1>Login</h1>
+            <form method='POST' action='/j_security_check'>
+                <fieldset>
+                    <label>Username</label>
+                    <input type='text' autocomplete="new-password" name='j_username'/>
+                </fieldset>
+
+                <fieldset>
+                    <label>Password</label>
+                    <input type='password' autocomplete="new-password" name='j_password'/>
+                </fieldset>
+
+                <fieldset>
+                    <input type='submit' value='LOGIN'/>
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>

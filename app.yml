@@ -1,0 +1,12 @@
+server:
+  type: form-based-authentication
+  loginUri: /login.html
+  loginErrorUri: /loginerror.html
+  logoutUri: /logout
+  applicationContextPath: /
+  rootPath: /api
+  applicationConnectors:
+    - type: http
+      port: 8080
+swagger:
+  resourcePackage: uk.co.chunkybacon.dwformbased.resource

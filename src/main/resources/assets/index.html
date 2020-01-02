@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Fruit</title>
+        <link rel="stylesheet" type="text/css" href="css/app.css"/>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript">
+            var selectFruit = function(event) {
+                $.getJSON("/api/fruit/" + event.data.value,function(response) {
+                    var fruit = response.data;
+                    var detail = $('#fruitDetail');
+                    detail.find(".name").text(fruit.name);
+                    detail.find(".colour").text(fruit.colour);
+                    detail.find(".edibleSkin").text(fruit.edibleSkin ? "No" : "You really should");
+                    detail.css("visibility", "visible");
+                });
+            };
+
+            $(function() {
+                $.getJSON("/api/fruit", function(response) {
+                    var fruitBowl = $('#fruitBowl');
+                    $.each(response.data.items, function(index, fruit) {
+                        var item = $('<li>');
+                        item.text(fruit.name);
+                        item.on('click', {value: fruit.name}, selectFruit);
+                        fruitBowl.append(item);
+                    });
+               });
+            });
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1>Fruit page</h1>
+            <p class="logout">
+                <a href="/logout">Click here to Log out</a>
+            </p>
+        </header>
+        <section id="appContainer">
+            <p>Select a fruit to find out more</p>
+
+            <ul id="fruitBowl"></ul>
+
+            <dl id="fruitDetail">
+                <dt>Name</dt>
+                <dd class="name"></dd>
+                <dt>Colour</dt>
+                <dd class="colour"></dd>
+                <dt>Do I need to peel?</dt>
+                <dd class="edibleSkin"></dd>
+            </dl>
+        </section>
+    </body>
+
+</html>
+

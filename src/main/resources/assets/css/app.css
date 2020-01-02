@@ -1,0 +1,154 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
+    color: #454545;
+    font-size: 14px;
+    background-color: #fff;
+}
+
+body.login-page {
+    background-color: #808083;
+}
+
+a, a:visited {
+    color: #565656;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+    padding: 12px;
+    background: #565657;
+    color: #fff;
+}
+
+header .logout {
+    position: absolute;
+    top: 6px;
+    right: 12px;
+    color: #fff;
+}
+
+header .logout a, header .logout a:visited {
+    color: #fff;
+}
+
+.error {
+    color: #e51530;
+}
+
+#appContainer {
+    position: relative;
+    margin: 0 0 0 12px;
+    width: 800px;
+    height: 400px;
+    background-color: #fff;
+}
+
+#appContainer .logout {
+    position: absolute;
+    bottom: 1px;
+    width: 800px;
+}
+
+#fruitBowl {
+    display: inline-block;
+    margin: 32px 0 0 -12px;
+    padding-right: 68px;
+    width: 280px;
+    text-align: left;
+}
+
+#fruitBowl li {
+    padding: 8px 12px;
+
+}
+
+#fruitBowl li:hover {
+    background: #26A3D9;
+    color: #fff;
+    cursor: pointer;
+}
+
+#fruitDetail {
+    visibility: hidden;
+    display: inline-block;
+    margin: 16px 0 0 0;
+    vertical-align: top;
+    text-align: right;
+    width: 280px;
+}
+
+#fruitDetail dl {
+    margin: 0;
+    text-align:left;
+}
+
+#fruitDetail dt {
+    margin-top: 16px;
+    font-weight: 600;
+    color: #888;
+}
+
+#fruitDetail dd {
+    margin: 0;
+}
+
+#login {
+    margin: 100px auto 0 auto;
+    width: 350px;
+    border: 1px solid #e0e0e1;
+    background-color: #fff;
+    text-align: center;
+}
+
+#login fieldset {
+    display: inline-block;
+    text-align: left;
+    margin: 12px 0;
+    padding: 0;
+    border: none;
+}
+
+#login label {
+    display: block;
+    padding-bottom: 6px;
+    font-size: 0.8em;
+}
+
+#login input {
+    display:block;
+    width: 240px;
+    padding: 6px 8px;
+    font-size: 1.3em;
+    color: #565656;
+}
+
+#login input[type=submit] {
+    margin: 32px 0 8px 0;
+    padding: 12px 0;
+    border: none;
+    background-color: #767778;
+    color: #fff;
+    font-size: 1.2em;
+}
+
+#login input[type=submit]:hover {
+    cursor: pointer;
+    background-color: #26A3D9;
+}
