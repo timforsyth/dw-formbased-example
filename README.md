@@ -1,41 +1,9 @@
 # Dropwizard form based authentication example
 This example project is a reminder to myself of how to work around a specific use case when building simple front end applications with a backend API.
 
-Let's say you want to build an application, using Dropwizard, with a pure javascript front-end in Angular/Vue/React etc..
+You want to build a simple front end in dropwizard alonside an API and restrict access to the application.
 
-For convenience, you want to host the front-end in dropwizard because this gives you a single deployable application. 
-
-However, you want to restrict access to the application, you read the dropwizard docs and realise you have limited options:
-
-
-##### Basic Authentication
-Dropwizard's AssetsBundles do not support access control. (this is by design I guess). 
-
-You could use dropwizard views and protect access on each controller but since your front-end code is static / pure javascript, you are duplicating effort pushing a controller in front of each page.
-
-Also, basic authentication is an ugly modal popup. Yuk. Not a nice user experience.
-
-
-##### JWT
-You could make the front-end open (no access control) and use JWT to access the API.
-
-This introduces a number of challenges:
-
-- Getting tokens
-- Validating tokens (on both sides, specifically the front end, am I logged in?)
-- Storing tokens
-- Revoking tokens
-
-If you solve these challenges you might realise that you just re-invented sessions. 
-
-
-### Use Sessions instead
-A tried and tested way to access and remain logged into an application.
-
-Under the cover, dropwizard uses jetty and since jetty has built in support for forms based authentication, you have the means to do this but it's not quite as straightforward as it seems.
-
-Thanks to this blog post: http://blog.locrian.uk/post/jetty-form-auth-dropwizard/ I created this project to enable forms based authentication on dropwizard _and_ protect access to the assets bundle if you do not have a valid session.
-
+You want a login page, but dropwizard doesn't support form based authentication.
 
 ## How to use
 
